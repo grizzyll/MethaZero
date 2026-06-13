@@ -1,86 +1,154 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>METHAZERO Dashboard</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
+@extends('layouts.app')
 
-<body class="bg-slate-100">
+@section('content')
 
-<div class="flex">
+<div class="relative overflow-hidden bg-gradient-to-r from-emerald-700 via-teal-600 to-cyan-500 text-white p-10 rounded-[32px] mb-8 shadow-2xl">
 
-    <!-- Sidebar -->
-    <div class="w-72 min-h-screen bg-green-700 text-white p-8">
+    <div class="absolute right-0 top-0 opacity-10 text-[180px] font-black">
+        MZ
+    </div>
 
-        <h1 class="text-5xl font-bold mb-10">
-            ♻️ METHAZERO
-        </h1>
+    <h1 class="text-6xl font-black">
+        METHAZERO
+    </h1>
 
-        <div class="space-y-4">
+    <p class="mt-3 text-xl">
+        Smart Waste Intelligence Platform
+    </p>
 
-            <a href="/" class="block bg-green-800 p-4 rounded-xl">
-                Dashboard
-            </a>
+    <p class="mt-4 max-w-2xl">
+        AI & IoT Based Waste Monitoring System for Sustainable Cities
+    </p>
 
-            <a href="/pemilahan" class="block p-4 rounded-xl hover:bg-green-800">
-                Pemilahan
-            </a>
+    <div class="flex gap-3 mt-6">
 
-            <a href="/pekerja" class="block p-4 rounded-xl hover:bg-green-800">
-                Pekerja
-            </a>
+        <span class="bg-white/20 px-4 py-2 rounded-full">
+            IoT Based
+        </span>
 
-            <a href="/monitoring" class="block p-4 rounded-xl hover:bg-green-800">
-                Monitoring
-            </a>
+        <span class="bg-white/20 px-4 py-2 rounded-full">
+            AI Ready
+        </span>
 
-            <a href="/laporan" class="block p-4 rounded-xl hover:bg-green-800">
-                Laporan
-            </a>
-
-        </div>
+        <span class="bg-white/20 px-4 py-2 rounded-full">
+            Smart City
+        </span>
 
     </div>
 
-    <!-- Content -->
-    <div class="flex-1 p-10">
+</div>
 
-        <h1 class="text-5xl font-bold text-slate-800">
-            Dashboard METHAZERO
-        </h1>
+<div class="grid md:grid-cols-4 gap-6 mb-8">
 
-        <p class="text-slate-500 mt-2">
-            Smart Waste Management System
+    <div class="card p-6">
+        <p class="text-gray-500">Total Sampah</p>
+        <h2 class="text-5xl font-black text-green-600">
+            255 Kg
+        </h2>
+    </div>
+
+    <div class="card p-6">
+        <p class="text-gray-500">Nilai Ekonomi</p>
+        <h2 class="text-5xl font-black text-blue-600">
+            Rp34K
+        </h2>
+    </div>
+
+    <div class="card p-6">
+        <p class="text-gray-500">TPS Aktif</p>
+        <h2 class="text-5xl font-black text-orange-500">
+            12
+        </h2>
+    </div>
+
+    <div class="card p-6">
+        <p class="text-gray-500">Status Sistem</p>
+        <h2 class="text-5xl font-black text-emerald-500">
+            Online
+        </h2>
+    </div>
+
+</div>
+
+<div class="grid md:grid-cols-3 gap-6 mb-8">
+
+    <div class="card p-6">
+        <h3 class="text-gray-500">Organik</h3>
+
+        <div class="w-full bg-gray-200 rounded-full h-4 mt-4">
+            <div class="bg-green-500 h-4 rounded-full" style="width:85%"></div>
+        </div>
+
+        <p class="mt-3 font-bold">
+            85%
         </p>
+    </div>
 
-        <div class="grid grid-cols-4 gap-6 mt-10">
+    <div class="card p-6">
+        <h3 class="text-gray-500">Anorganik</h3>
 
-            <div class="bg-white p-6 rounded-2xl shadow">
-                <h3>Total Sampah</h3>
-                <p class="text-4xl text-green-600 font-bold">
-                    255 Kg
-                </p>
+        <div class="w-full bg-gray-200 rounded-full h-4 mt-4">
+            <div class="bg-blue-500 h-4 rounded-full" style="width:72%"></div>
+        </div>
+
+        <p class="mt-3 font-bold">
+            72%
+        </p>
+    </div>
+
+    <div class="card p-6">
+        <h3 class="text-gray-500">Logam</h3>
+
+        <div class="w-full bg-gray-200 rounded-full h-4 mt-4">
+            <div class="bg-yellow-500 h-4 rounded-full" style="width:45%"></div>
+        </div>
+
+        <p class="mt-3 font-bold">
+            45%
+        </p>
+    </div>
+
+</div>
+
+<div class="grid md:grid-cols-2 gap-6">
+
+    <div class="card p-6">
+
+        <h2 class="text-2xl font-bold mb-4">
+            Volume Sampah Mingguan
+        </h2>
+
+        <canvas id="wasteChart"></canvas>
+
+    </div>
+
+    <div class="card p-6">
+
+        <h2 class="text-2xl font-bold mb-6">
+            Monitoring IoT
+        </h2>
+
+        <div class="space-y-5">
+
+            <div>
+                <p class="text-gray-500">CH₄ (Metana)</p>
+                <h3 class="text-4xl font-bold text-red-500">
+                    12.4 ppm
+                </h3>
             </div>
 
-            <div class="bg-white p-6 rounded-2xl shadow">
-                <h3>Nilai Ekonomi</h3>
-                <p class="text-4xl text-blue-600 font-bold">
-                    Rp34K
-                </p>
+            <div>
+                <p class="text-gray-500">Suhu</p>
+                <h3 class="text-4xl font-bold">
+                    32.6°C
+                </h3>
             </div>
 
-            <div class="bg-white p-6 rounded-2xl shadow">
-                <h3>TPS Aktif</h3>
-                <p class="text-4xl text-orange-500 font-bold">
-                    12
-                </p>
-            </div>
-
-            <div class="bg-white p-6 rounded-2xl shadow">
-                <h3>Status</h3>
-                <p class="text-4xl text-green-600 font-bold">
-                    Online
-                </p>
+            <div>
+                <p class="text-gray-500">Kelembaban</p>
+                <h3 class="text-4xl font-bold">
+                    65%
+                </h3>
             </div>
 
         </div>
@@ -89,5 +157,34 @@
 
 </div>
 
-</body>
-</html>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+new Chart(document.getElementById('wasteChart'), {
+
+type: 'line',
+
+data: {
+
+labels: ['Sen','Sel','Rab','Kam','Jum','Sab','Min'],
+
+datasets: [{
+
+label: 'Volume Sampah',
+
+data: [12,19,10,15,22,18,25],
+
+borderWidth: 3,
+
+tension: .4
+
+}]
+
+}
+
+});
+
+</script>
+
+@endsection

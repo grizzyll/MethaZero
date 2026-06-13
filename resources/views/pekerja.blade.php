@@ -1,149 +1,62 @@
-<!DOCTYPE html>
+@extends('layouts.app')
 
-<html>
-<head>
-    <title>Pekerja - METHAZERO</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
+@section('content')
 
-<body class="bg-slate-100">
+<div class="flex justify-between items-center mb-8">
 
-<div class="flex">
+<div>
+<h1 class="text-4xl font-bold">Manajemen Pekerja TPS</h1>
+<p class="text-gray-500">Data operator MethaZero</p>
+</div>
 
-```
-<!-- Sidebar -->
-<div class="w-72 min-h-screen bg-green-700 text-white p-8">
-
-    <h1 class="text-5xl font-bold mb-10">
-        ♻️ METHAZERO
-    </h1>
-
-    <div class="space-y-4">
-
-        <a href="/" class="block p-4 rounded-xl hover:bg-green-800">
-            Dashboard
-        </a>
-
-        <a href="/pemilahan" class="block p-4 rounded-xl hover:bg-green-800">
-            Pemilahan
-        </a>
-
-        <a href="/pekerja" class="block bg-green-800 p-4 rounded-xl">
-            Pekerja
-        </a>
-
-        <a href="/monitoring" class="block p-4 rounded-xl hover:bg-green-800">
-            Monitoring
-        </a>
-
-        <a href="/laporan" class="block p-4 rounded-xl hover:bg-green-800">
-            Laporan
-        </a>
-
-    </div>
+<button class="bg-emerald-600 text-white px-5 py-3 rounded-xl">
++ Tambah Pekerja
+</button>
 
 </div>
 
-<!-- Content -->
-<div class="flex-1 p-10">
+<div class="card p-6">
 
-    <h1 class="text-5xl font-bold text-slate-800">
-        Manajemen Pekerja
-    </h1>
+<table class="w-full">
 
-    <p class="text-slate-500 mt-2">
-        Monitoring Petugas Pengelola Sampah
-    </p>
+<thead>
 
-    <div class="grid grid-cols-3 gap-6 mt-10">
+<tr class="border-b">
+<th class="p-4">Nama</th>
+<th class="p-4">NIK</th>
+<th class="p-4">Status</th>
+<th class="p-4">Aksi</th>
+</tr>
 
-        <div class="bg-white p-6 rounded-2xl shadow">
-            <h3>Total Pekerja</h3>
-            <p class="text-4xl font-bold text-green-600">
-                15
-            </p>
-        </div>
+</thead>
 
-        <div class="bg-white p-6 rounded-2xl shadow">
-            <h3>Sedang Bertugas</h3>
-            <p class="text-4xl font-bold text-blue-600">
-                12
-            </p>
-        </div>
+<tbody>
 
-        <div class="bg-white p-6 rounded-2xl shadow">
-            <h3>Libur</h3>
-            <p class="text-4xl font-bold text-red-500">
-                3
-            </p>
-        </div>
+<tr class="border-b">
+<td class="p-4">Budi Santoso</td>
+<td class="p-4">TPS001</td>
+<td class="p-4 text-green-600">Aktif</td>
+<td class="p-4">🗑️</td>
+</tr>
 
-    </div>
+<tr class="border-b">
+<td class="p-4">Siti Aminah</td>
+<td class="p-4">TPS002</td>
+<td class="p-4 text-green-600">Aktif</td>
+<td class="p-4">🗑️</td>
+</tr>
 
-    <div class="bg-white rounded-2xl shadow p-6 mt-8">
+<tr>
+<td class="p-4">Zein Aisyah</td>
+<td class="p-4">TPS003</td>
+<td class="p-4 text-green-600">Aktif</td>
+<td class="p-4">🗑️</td>
+</tr>
 
-        <h2 class="text-2xl font-bold mb-4">
-            Data Petugas
-        </h2>
+</tbody>
 
-        <table class="w-full">
-
-            <thead>
-                <tr class="bg-green-700 text-white">
-                    <th class="p-3">Nama</th>
-                    <th class="p-3">Shift</th>
-                    <th class="p-3">Area</th>
-                    <th class="p-3">Status</th>
-                </tr>
-            </thead>
-
-            <tbody>
-
-                <tr class="border-b">
-                    <td class="p-3">Andi Saputra</td>
-                    <td class="p-3">Pagi</td>
-                    <td class="p-3">TPS 01</td>
-                    <td class="p-3 text-green-600 font-semibold">Aktif</td>
-                </tr>
-
-                <tr class="border-b">
-                    <td class="p-3">Budi Santoso</td>
-                    <td class="p-3">Siang</td>
-                    <td class="p-3">TPS 02</td>
-                    <td class="p-3 text-green-600 font-semibold">Aktif</td>
-                </tr>
-
-                <tr class="border-b">
-                    <td class="p-3">Citra Lestari</td>
-                    <td class="p-3">Malam</td>
-                    <td class="p-3">TPS 03</td>
-                    <td class="p-3 text-red-600 font-semibold">Libur</td>
-                </tr>
-
-                <tr class="border-b">
-                    <td class="p-3">Dewi Anggraini</td>
-                    <td class="p-3">Pagi</td>
-                    <td class="p-3">TPS 04</td>
-                    <td class="p-3 text-green-600 font-semibold">Aktif</td>
-                </tr>
-
-                <tr>
-                    <td class="p-3">Rizky Maulana</td>
-                    <td class="p-3">Siang</td>
-                    <td class="p-3">TPS 05</td>
-                    <td class="p-3 text-green-600 font-semibold">Aktif</td>
-                </tr>
-
-            </tbody>
-
-        </table>
-
-    </div>
-
-</div>
-```
+</table>
 
 </div>
 
-</body>
-</html>
+@endsection

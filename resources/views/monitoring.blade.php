@@ -1,92 +1,50 @@
-<!DOCTYPE html>
+@extends('layouts.app')
 
-<html>
-<head>
-    <title>Monitoring - METHAZERO</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
+@section('content')
 
-<body class="bg-slate-100">
+<h1 class="text-4xl font-bold mb-8">
+Monitoring Kota
+</h1>
 
-<div class="flex">
+<div class="grid md:grid-cols-4 gap-6 mb-8">
 
-```
-<!-- Sidebar -->
-<div class="w-72 min-h-screen bg-green-700 text-white p-8">
+<div class="card p-6">
+<p>Total Sampah</p>
+<h2 class="text-4xl font-bold text-green-600">255 Kg</h2>
+</div>
 
-    <h1 class="text-5xl font-bold mb-10">
-        ♻️ METHAZERO
-    </h1>
+<div class="card p-6">
+<p>Nilai Ekonomi</p>
+<h2 class="text-4xl font-bold text-blue-600">Rp34.000</h2>
+</div>
 
-    <div class="space-y-4">
+<div class="card p-6">
+<p>Total Pekerja</p>
+<h2 class="text-4xl font-bold">3</h2>
+</div>
 
-        <a href="/" class="block p-4 rounded-xl hover:bg-green-800">
-            Dashboard
-        </a>
-
-        <a href="/pemilahan" class="block p-4 rounded-xl hover:bg-green-800">
-            Pemilahan
-        </a>
-
-        <a href="/pekerja" class="block p-4 rounded-xl hover:bg-green-800">
-            Pekerja
-        </a>
-
-        <a href="/monitoring" class="block bg-green-800 p-4 rounded-xl">
-            Monitoring
-        </a>
-
-        <a href="/laporan" class="block p-4 rounded-xl hover:bg-green-800">
-            Laporan
-        </a>
-
-    </div>
+<div class="card p-6">
+<p>TPS Aktif</p>
+<h2 class="text-4xl font-bold text-orange-500">12</h2>
+</div>
 
 </div>
 
-<!-- Content -->
-<div class="flex-1 p-10">
+<div class="card p-8">
 
-    <h1 class="text-5xl font-bold text-slate-800">
-        Monitoring Smart Bin
-    </h1>
+<h2 class="text-2xl font-bold mb-6">
+Ringkasan Dampak Lingkungan
+</h2>
 
-    <p class="text-slate-500 mt-2">
-        Real-Time IoT Monitoring
-    </p>
+<p class="text-gray-600 leading-8">
+Sistem MethaZero berhasil memisahkan 255 Kg sampah
+dan meningkatkan efisiensi daur ulang hingga 24%.
+</p>
 
-    <div class="grid grid-cols-3 gap-6 mt-10">
-
-        <div class="bg-white p-6 rounded-2xl shadow">
-            <h3>Smart Bin 01</h3>
-            <p class="text-4xl font-bold text-green-600 mt-2">
-                75%
-            </p>
-            <p class="text-green-600 mt-2">● Online</p>
-        </div>
-
-        <div class="bg-white p-6 rounded-2xl shadow">
-            <h3>Smart Bin 02</h3>
-            <p class="text-4xl font-bold text-yellow-500 mt-2">
-                52%
-            </p>
-            <p class="text-green-600 mt-2">● Online</p>
-        </div>
-
-        <div class="bg-white p-6 rounded-2xl shadow">
-            <h3>Smart Bin 03</h3>
-            <p class="text-4xl font-bold text-red-500 mt-2">
-                95%
-            </p>
-            <p class="text-red-500 mt-2">● Offline</p>
-        </div>
-
-    </div>
-
-</div>
-```
+<button class="mt-6 bg-emerald-600 text-white px-6 py-3 rounded-xl">
+Unduh Laporan
+</button>
 
 </div>
 
-</body>
-</html>
+@endsection
